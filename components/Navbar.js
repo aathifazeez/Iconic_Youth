@@ -50,9 +50,9 @@ const Navbar = () => {
                     </div>
 
                     {/* Join Us Button */}
-                    <button className="hidden md:block bg-teal-500 hover:bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105">
+                    <Link href="/join" className="hidden md:block bg-teal-500 hover:bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105">
                         Join Now
-                    </button>
+                    </Link>
 
                     {/* Mobile Menu Button */}
                     <button

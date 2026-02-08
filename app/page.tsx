@@ -7,11 +7,11 @@ import HeroSlider from '@/components/HeroSlider';
 import Image from 'next/image';
 
 const HomePage = () => {
-  const [counters, setCounters] = useState({ volunteers: 0, schools: 0, events: 0, members: 0 });
+  const [counters, setCounters] = useState({ projects: 0, valuation: 0, members: 0 });
 
   useEffect(() => {
     const animateCounters = () => {
-      const targets = { volunteers: 10000, schools: 50, events: 200, members: 500 };
+      const targets = { projects: 100, valuation: 10000000, members: 100 };
       const duration = 2000;
       const steps = 60;
       const interval = duration / steps;
@@ -20,9 +20,8 @@ const HomePage = () => {
       const timer = setInterval(() => {
         step++;
         setCounters({
-          volunteers: Math.floor((targets.volunteers / steps) * step),
-          schools: Math.floor((targets.schools / steps) * step),
-          events: Math.floor((targets.events / steps) * step),
+          projects: Math.floor((targets.projects / steps) * step),
+          valuation: Math.floor((targets.valuation / steps) * step),
           members: Math.floor((targets.members / steps) * step)
         });
         if (step >= steps) clearInterval(timer);
@@ -67,9 +66,9 @@ const HomePage = () => {
   ];
 
   const ambassadors = [
-    { name: "Sarah Thompson", quote: "Being part of Iconic Youth has transformed my perspective on community service.", rating: 5 },
-    { name: "David Chen", quote: "The opportunities here have helped me grow both personally and professionally.", rating: 5 },
-    { name: "Maria Rodriguez", quote: "I've made lifelong friends while making a real difference in people's lives.", rating: 5 }
+    { name: "Community Leader", quote: "During a difficult time for our community, Iconic Youths stepped in without hesitation. Their support brought relief, but more importantly, it brought hope. We will always remember their kindness.", rating: 5 },
+    { name: "School Principal", quote: "The educational support provided to our students has been invaluable. Seeing young volunteers dedicate their time for the future of our children is truly inspiring.", rating: 5 },
+    { name: "Local Resident", quote: "Iconic Youths does not just deliver assistance — they connect with people, listen to their needs, and respond with compassion. Their presence has positively impacted many families in our area.", rating: 5 }
   ];
 
   const supportOptions = [
@@ -90,10 +89,11 @@ const HomePage = () => {
             <AnimatedSection animation="slide-in-left">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Iconic Youth is a vibrant community of young changemakers dedicated to creating lasting positive impact. We believe in the power of collective action and youth empowerment to transform communities and build a better future for all.
+                Founded in Akkaraipattu and now operating across Sri Lanka, Iconic Youths is a nationwide movement driven by passionate young individuals committed to uplifting communities.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Through innovative programs, community initiatives, and collaborative partnerships, we're mobilizing the next generation of leaders to tackle the most pressing challenges facing our society today.
+                From education initiatives and environmental efforts to relief programs and youth development, our work is guided by one belief, meaningful change begins when individuals choose to step forward.
+                Today, with 100+ active volunteers and the support of our growing network of partners, we continue to expand our reach and deepen our impact.
               </p>
               <button className="bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-600 transition-all transform hover:scale-105 inline-flex items-center">
                 Learn More <ChevronRight className="ml-2" size={20} />
@@ -116,12 +116,11 @@ const HomePage = () => {
             <p className="text-teal-100">See how we're making a difference in communities worldwide</p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Users, value: counters.volunteers, suffix: '+', label: 'Active Volunteers' },
-              { icon: Award, value: counters.schools, suffix: '+', label: 'Partner Schools' },
-              { icon: TrendingUp, value: counters.events, suffix: '+', label: 'Events Organized' },
-              { icon: Target, value: counters.members, suffix: '+', label: 'Community Members' }
+              { icon: Target, value: counters.projects, suffix: '+', label: 'Projects' },
+              { icon: TrendingUp, value: counters.valuation.toLocaleString(), suffix: '+', label: 'Valuation' },
+              { icon: Users, value: counters.members, suffix: '+', label: 'Members' }
             ].map((stat, idx) => (
               <AnimatedSection key={idx} animation="scale-in">
                 <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all transform hover:scale-105">
@@ -308,31 +307,55 @@ const HomePage = () => {
 
                 <div className="space-y-4 mb-8">
                   <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
-                    <h4 className="font-bold text-gray-900 mb-1">Bank Name</h4>
-                    <p className="text-gray-700">Iconic Youth Bank</p>
-                  </div>
-
-                  <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
-                    <h4 className="font-bold text-gray-900 mb-1">Account Name</h4>
-                    <p className="text-gray-700">Iconic Youth Organization</p>
+                    <h4 className="font-bold text-gray-900 mb-1">Name</h4>
+                    <p className="text-gray-700">Iconic Youths</p>
                   </div>
 
                   <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
                     <h4 className="font-bold text-gray-900 mb-1">Account Number</h4>
-                    <p className="text-gray-700 font-mono text-lg">1234 5678 9012 3456</p>
+                    <p className="text-gray-700 font-mono text-lg">8172009741</p>
                   </div>
 
                   <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
-                    <h4 className="font-bold text-gray-900 mb-1">SWIFT/BIC Code</h4>
-                    <p className="text-gray-700 font-mono">IYOUTHXX</p>
+                    <h4 className="font-bold text-gray-900 mb-1">Bank</h4>
+                    <p className="text-gray-700">Commercial Bank</p>
+                  </div>
+
+                  <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
+                    <h4 className="font-bold text-gray-900 mb-1">Branch</h4>
+                    <p className="text-gray-700">Akkaraipattu</p>
+                  </div>
+
+                  <div className="p-4 bg-teal-50 rounded-xl border-l-4 border-teal-500">
+                    <h4 className="font-bold text-gray-900 mb-1">SWIFT CODE</h4>
+                    <p className="text-gray-700 font-mono">CCEYLKLX</p>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl">
-                  <h4 className="font-bold text-gray-900 mb-2">Important Note</h4>
-                  <p className="text-gray-600 text-sm">
-                    Please include your name and contact information in the transfer reference so we can acknowledge your generous contribution and provide a donation receipt.
-                  </p>
+                  <h4 className="font-bold text-gray-900 mb-3">Causes of Support</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="mr-2 mt-1 text-teal-600 flex-shrink-0" size={18} />
+                      <span>Right To Education</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="mr-2 mt-1 text-teal-600 flex-shrink-0" size={18} />
+                      <span>Fasting to Feasting</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="mr-2 mt-1 text-teal-600 flex-shrink-0" size={18} />
+                      <span>Cancer care hospital visit</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="mr-2 mt-1 text-teal-600 flex-shrink-0" size={18} />
+                      <span>Children and elders home visit</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="mr-2 mt-1 text-teal-600 flex-shrink-0" size={18} />
+                      <span>Personal requests</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </AnimatedSection>

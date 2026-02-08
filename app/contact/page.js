@@ -90,7 +90,7 @@ export default function ContactPage() {
                             Contact Us
                         </h1>
                         <p className="text-xl text-white opacity-90 max-w-2xl mx-auto">
-                            Have a question or an idea? We'd love to hear from you.
+                            Stay updated with our latest initiatives, community projects, and opportunities to get involved.
                         </p>
                         <div className="w-24 h-1 bg-white mx-auto mt-6"></div>
                     </div>
@@ -103,39 +103,42 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Get in Touch Card */}
                         <div className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-10 text-white shadow-2xl animate-slide-in-left">
-                            <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+                            <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
                             <p className="text-teal-100 mb-8 text-lg">
-                                Whether you're curious about our services, need support, or just want to say hello — we're here to help.
+                                We would love to hear from you. Whether you are looking to volunteer, partner with us, support our initiatives, or simply learn more about what we do, our team is always ready to connect.
+                            </p>
+                            <p className="text-teal-100 mb-8 text-lg font-semibold">
+                                Together, we can create meaningful change.
                             </p>
 
                             <div className="space-y-6">
                                 <ContactInfoCard
                                     icon={MapPin}
-                                    title="Our Location"
-                                    content="123 Main Street, Suite 101, City, State 12345"
-                                />
-                                <ContactInfoCard
-                                    icon={Mail}
-                                    title="Email Us"
-                                    content="contact@example.com"
+                                    title="Address"
+                                    content="Iconic Youths Sri Lanka, Akkaraipattu, Sri Lanka"
                                 />
                                 <ContactInfoCard
                                     icon={Phone}
-                                    title="Call Us"
-                                    content="+1 (555) 123-4567"
+                                    title="Phone"
+                                    content="+94 75 55 77 266"
+                                />
+                                <ContactInfoCard
+                                    icon={Mail}
+                                    title="Email"
+                                    content="iconicyouths1@gmail.com"
                                 />
                                 <ContactInfoCard
                                     icon={Clock}
                                     title="Working Hours"
-                                    content="Monday - Friday: 9am - 5pm
-Saturday - Sunday: 10am - 4pm"
+                                    content="Monday - Saturday: 9am - 5pm"
                                 />
                             </div>
                         </div>
 
                         {/* Contact Form */}
                         <div className="bg-white rounded-3xl p-10 shadow-xl animate-slide-in-right">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                            <h2 className="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                            <p className="text-gray-600 mb-6">Send us a message to share to iconicyouths1@gmail.com</p>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
@@ -262,11 +265,9 @@ Saturday - Sunday: 10am - 4pm"
                     />
 
                     <div className="flex justify-center gap-6 mb-16">
-                        <SocialButton icon={Facebook} href="#" />
-                        <SocialButton icon={Twitter} href="#" />
-                        <SocialButton icon={Instagram} href="#" />
+                        <SocialButton icon={Facebook} href="https://web.facebook.com/profile.php?id=100087918503695" />
+                        <SocialButton icon={Instagram} href="https://www.instagram.com/iconic_youthssl/" />
                         <SocialButton icon={Linkedin} href="#" />
-                        <SocialButton icon={Youtube} href="#" />
                     </div>
 
                     {/* Newsletter */}
